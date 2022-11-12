@@ -12,6 +12,7 @@ pub fn read(path: &PathBuf) -> String {
 }
 
 fn read_mhl_file(path: &PathBuf) -> Result<String, String> {
+    if path.exists() {} else { return Err(format!("Invalid Path, {} is Not Found", path.display())); }
     let extension = path.extension();
     if extension == None || extension.unwrap() != "mhl" { return Err(String::from("Different Extension")); }
     let file_content = fs::read_to_string(path);
