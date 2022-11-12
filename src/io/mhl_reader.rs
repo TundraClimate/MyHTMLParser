@@ -12,7 +12,8 @@ pub fn read(path: &PathBuf) -> String {
 }
 
 fn read_mhl_file(path: &PathBuf) -> Result<String, String> {
-    if path.extension().unwrap() != "mhl" { return Err(String::from("Different Extension")) }
+    let extension = path.extension();
+    if extension == None || extension.unwrap() != "mhl" { return Err(String::from("Different Extension")); }
     let file_content = fs::read_to_string(path);
     match file_content {
         Ok(file) => Ok(file),
