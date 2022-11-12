@@ -6,7 +6,7 @@ fn main() {
     let args = std::env::args();
     let config = config::load_config(args);
     if let Err(e) = &config {
-        eprintln!("error: {}", e);
+        eprintln!("load error: {}", e);
         process::exit(1);
     }
     let config = config.unwrap();
