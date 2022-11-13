@@ -1,3 +1,3 @@
 pub mod config;
-pub mod parser;
+pub mod parse;
 pub mod io;
