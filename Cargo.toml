@@ -1,5 +1,5 @@
 [package]
-name = "MyHTMLParser"
+name = "my_html_parser"
 version = "0.1.0"
 edition = "2021"
 
